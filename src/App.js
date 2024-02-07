@@ -1,14 +1,21 @@
 import './App.css';
 import { useWeatherDataContext } from './WeatherDataContext';
+import { useState } from "react";
 import AllWeekDayDetails from './components/AllWeekDayDetails';
 import CityDetails from './components/CityDetails';
 import ImageCondition from './components/ImageCondition';
 import OtherDetails from './components/OtherDetails';
 import Temparature from './components/Temperature';
+import SearchPlaces from './components/SearchPlaces';
 
 
 function App() {
   const {weatherData,loading} = useWeatherDataContext();
+  const [isToggled, setToggled] = useState(false);
+
+    const handleToggle = () => {
+      setToggled(!isToggled);
+    }
   console.log(weatherData);
   
   return (
@@ -21,9 +28,16 @@ function App() {
         backgroundBlendMode: 'darken',
         color: '#ffffff'
         }}>
-        {loading ? (<p> loading...</p>) : (<div className="card-body pt-4 d-flex flex-column">
-           <div className="row mt-2 mx-2 " style={{
-            height: '16rem',
+        {loading ? (<div className="card-body d-flex justify-content-center align-items-center"> <p>
+         loading...</p> </div>) : (<div className="card-body pt-4 d-flex flex-column">
+          <div className="navigation" style={{
+            border: '1px solid black',
+            height: '2rem',
+          }}>
+            <SearchPlaces />
+          </div>
+           <div className="row mt-3 mx-2 " style={{
+            height: '15rem',
            }}>
 
            <div className="col-7 d-flex flex-column "  >
@@ -32,8 +46,17 @@ function App() {
            </div>
 
 
-           <div className="col-5 d-flex text-center align-items-center justify-content-center">
-           <Temparature />
+           <div className="col-5 d-flex flex-column text-center align-items-center justify-content-center" style={{
+            border: '1px solid black',
+           }}>
+           <Temparature isToggled={isToggled}  />
+
+           <div className="mt-4 toggle-container">
+            <input type="checkbox" onClick={handleToggle} 
+              id="toggle-btn"
+            />            
+            <label htmlFor="toggle-btn" className="slider"></label>            
+           </div>
            </div>
 
            </div>
