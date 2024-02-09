@@ -3,11 +3,12 @@ import { createContext, useState, useEffect, useContext } from "react";
 const WeatherDataContext = createContext();
 
  const WeatherDataProvider = ({ children }) => {
-    const [weatherData, setWeatherData] = useState(null);
+  const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const place = "London";
   useEffect(() => {
-    const url = 'https://weatherapi-com.p.rapidapi.com/forecast.json?q=London&days=3';
+    const url = `https://weatherapi-com.p.rapidapi.com/forecast.json?q=${place}&days=3`;
     const options = {
 	    method: 'GET',
 	    headers: {
