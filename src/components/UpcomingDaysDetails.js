@@ -9,14 +9,7 @@ function UpcomingDaysDetails({ isToggled }){
         const date = new Date(day.date).toString().split(" ");
         currentDate = (currentDate < 10) ? `0${currentDate}` : `${currentDate}`;
         return (
-         <div key={index} className="card day-card" style={{
-            height: '10rem',
-            width: '8rem',
-            backgroundImage: 'url("https://t3.ftcdn.net/jpg/03/01/57/38/360_F_301573846_7L4jW6ub2eS93JGsTNLGsZttzPnwotFl.jpg")',
-            backgroundColor: 'rgba(0,0,0,0.2)',
-            backgroundBlendMode: 'darken',
-            color: '#F6F6F9',
-         }}>
+         <div key={index} className="day-card">
             {isToggled ? (<section className="card-body d-flex flex-column justify-content-center align-items-center m-0 p-0">
                 <p className="day-text">{(currentDate === date[2]) ? "Today" : 
                 ((parseInt(currentDate) + 1) === parseInt(date[2])) ? "Tommorow" : date[0]}</p> 

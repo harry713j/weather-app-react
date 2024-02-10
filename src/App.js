@@ -10,13 +10,13 @@ import UpcomingDaysDetails from './components/UpcomingDaysDetails';
 
 
 function App() {
-  const {weatherData,loading} = useWeatherDataContext();
+  const {loading} = useWeatherDataContext();
   const [isToggled, setToggled] = useState(false);
 
     const handleToggle = () => {
       setToggled(!isToggled);
     }
-  console.log(weatherData);
+    
   
   return (
     <div className="container d-flex align-items-center justify-content-center mt-5">
@@ -30,13 +30,11 @@ function App() {
         }}>
         {loading ? (<div className="card-body d-flex justify-content-center align-items-center"> <p>
          loading...</p> </div>) : (<div className="card-body pt-4 d-flex flex-column">
-          <div className="navigation" style={{
-            height: '2rem',
-          }}>
+          <div className="navigation" >
             <SearchPlaces />
           </div>
            <div className="row mt-3 mx-2 " style={{
-            height: '15rem',
+            height: '17rem',
            }}>
 
            <div className="col-7 d-flex flex-column "  >
