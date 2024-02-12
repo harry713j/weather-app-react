@@ -40,12 +40,12 @@ Responsive design, suitable for use on desktop and mobile devices.
  1. React.js
  2. CSS
  3. Bootstrap
- 4. Weather API by WeatherAPI.com
+ 4. [WeatherAPI.com](https://www.weatherapi.com/)
 
 ## Contributing:
 Contributions are welcome! Please fork the repository and submit a pull request with your improvements.
 
 ## Acknowledgements:
-1. Weather data provided by WeatherAPI
+1. Weather data provided by [WeatherAPI.com](https://www.weatherapi.com/)
 2. Icons used in the app from WeatherAPI icons
 
