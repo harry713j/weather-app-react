@@ -16,7 +16,6 @@ function App() {
     const handleToggle = () => {
       setToggled(!isToggled);
     }
-    
   
   return (
     <div className="container d-flex align-items-center justify-content-center mt-5">
@@ -24,9 +23,9 @@ function App() {
         width: '40rem',
         height: '25rem',
         backgroundImage: 'url("https://t3.ftcdn.net/jpg/03/01/57/38/360_F_301573846_7L4jW6ub2eS93JGsTNLGsZttzPnwotFl.jpg")',
-        backgroundColor: 'rgba(50,0,240,0.9)',
+        backgroundColor: 'rgba(0,158,220,0.6)',
         backgroundBlendMode: 'darken',
-        color: '#ffffff'
+        color: '#f2f2f3'
         }}>
         {loading ? (<div className="card-body d-flex justify-content-center align-items-center"> <p>
          loading...</p> </div>) : (<div className="card-body pt-4 d-flex flex-column">

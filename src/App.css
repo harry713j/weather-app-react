@@ -11,6 +11,18 @@
   }
 }
 
+@keyframes pressAnimation {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
 ::-webkit-scrollbar{
   width: 7px;
 }
@@ -19,6 +31,7 @@
   background-color: #a4a4a4;
   width: 6px;
 }
+
 
 /*  Reset */
 *{
@@ -34,13 +47,14 @@ body{
 }
 
 .card{
+  width: 40rem;
   animation: fade-in 0.4s;
   overflow-y: auto ;
 }
 
 /* temperature */
 .temp{
-  transition: all 0.9s ;
+  transition: all 1s linear;
 }
 
 .toggle-container input{
@@ -56,8 +70,8 @@ body{
   border-radius: 10px;
   background-color: #bec2e2;
   cursor: pointer;
-  -webkit-transition: background-color 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out;
+  -webkit-transition: all 1s linear;
+  transition: all 1s linear;
 }
 
 .slider::before{
@@ -71,8 +85,8 @@ body{
   transform: translateY(-50%);
   border-radius: 5px;
   background-color: #f2efef;
-  -webkit-transition: right 0.3s ease-in-out, content .3s ease-in-out;
-  transition: right .3s ease-in-out, content .3s ease-in-out;
+  -webkit-transition: all 1s linear;
+  transition: all 1s linear;
 }
 
 .toggle-container input:checked + label {
@@ -93,16 +107,15 @@ body{
   align-items: center;
   justify-content: end;
   margin-right: 11px;
-
 }
 
 .search-form{
-  
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .search-icon{
+  font-size: 13px;
   position: absolute;
   color: #717479;
   left: 380px;
@@ -119,6 +132,7 @@ body{
   font-weight: 400;
   opacity: 0.9;
   border: none;
+  outline: none;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
   border-radius: 7px;
   padding: 3px 0 4px 30px;
@@ -171,16 +185,19 @@ body{
   font-size: 13px;
   font-weight: 400;
   background-color: #e9e8f1;
+  margin: .8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-bottom: 5px;
+  animation: pressAnimation 0.3s;
 }
-.card-button{
-  margin: 0;
-  padding: 0;
-  border-radius: 4px;
-  border: none;
+
+.place-card:hover{
+  background-color: #cacacc ;
 }
+/* .place-card:active{
+  transform: translateY(3px);
+} */
 /* Upcoming day details */
 
 .day-text{
@@ -243,4 +260,27 @@ body{
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(18px);
   border-radius: 7px;
+}
+
+/* media queries */
+@media(max-width: 1200px){
+  body{
+    background-size: contain;
+  }
+}
+@media(max-width: 780px){
+  .card{
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .search-icon{
+    left: 255px;
+  }
+}
+
+@media(max-width: 575px){
+  .search-icon{
+    left: 50px !important;
+  }
 }

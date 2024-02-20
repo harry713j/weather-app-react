@@ -42,8 +42,7 @@ function SearchPlaces(){
     console.log("array: ",placesWeatherData);
     const suggetions = placesWeatherData.map((result, index)=> {
         return (
-            <button key={index} className="card-button" onClick={() => handlePlaceSelect(result.location.name)}>
-            <div  className="place-card">
+            <button key={index} className="place-card" onClick={() => handlePlaceSelect(result.location.name)}>
                 <section className="d-flex flex-column justify-content-center" >
                     <p style={{
                         fontSize: '16px',
@@ -80,7 +79,6 @@ function SearchPlaces(){
                         {result.current.temp_c}℃
                     </p>
                 </section>
-            </div>
             </button>
             
         )
@@ -89,14 +87,11 @@ function SearchPlaces(){
 
             <div className="search-form" >
             
-                <i className="fa-solid fa-magnifying-glass search-icon" style={{
-                    fontSize: '13px',
-                }}></i>
+                <i className="fa-solid fa-magnifying-glass search-icon"></i>
                 <input type="text" className="search-input" 
                     placeholder="Enter your location (e.g. New Delhi)"
                     value={searchInput}
                     onChange={handleChange}
-                    style={{border:'1px solid black'}}
                 />
                 {searchInput.length > 0 && (<div className="suggested-places-holder">
                 <div className="suggested-places">
